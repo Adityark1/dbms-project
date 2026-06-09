@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>HRMS - Projects</title>
+    <link rel="stylesheet" href="css/style.css" />
+</head>
+<body>
+    <div class="layout">
+        <aside class="sidebar">
+           <div class="sidebar-header">
+    <img
+        src="images/hrms-logo.png"
+        alt="HRMS Logo"
+        class="sidebar-logo"
+    />
+</div>
+
+            <nav class="sidebar-nav">
+                <a href="index.html" class="nav-item">
+                    <span>📊</span> Dashboard
+                </a>
+                <a href="employee.html" class="nav-item">
+                    <span>👥</span> Employees
+                </a>
+                <a href="departments.html" class="nav-item">
+                    <span>🏢</span> Departments
+                </a>
+                <a href="projects.html" class="nav-item active">
+                    <span>📁</span> Projects
+                </a>
+                <a href="attendance.html" class="nav-item">
+                    <span>📅</span> Attendance
+                </a>
+                <a href="leave.html" class="nav-item">
+                    <span>🌴</span> Leave Records
+                </a>
+                <a href="payroll.html" class="nav-item">
+                    <span>💰</span> Payroll
+                </a>
+            </nav>
+        </aside>
+
+        <main class="main-content">
+            <header class="topbar">
+                <h1>Projects</h1>
+                <p>Manage projects, budgets, and timelines</p>
+            </header>
+
+            <!-- Search -->
+            <section class="toolbar">
+                <input
+                    type="text"
+                    id="searchInput"
+                    placeholder="Search projects..."
+                />
+            </section>
+
+            <!-- Add Project -->
+            <section class="card">
+                <h2>Add Project</h2>
+
+                <form id="projectForm">
+                    <input
+                        type="text"
+                        id="project_name"
+                        placeholder="Project Name"
+                        required
+                    />
+
+                    <input
+                        type="number"
+                        id="budget"
+                        placeholder="Budget"
+                        step="0.01"
+                    />
+
+                   <input
+                     type="text"
+                     id="start_date"
+                     placeholder="Start Date"
+                     onfocus="this.type='date'"
+                     onblur="if(!this.value)this.type='text'"
+                                                                />
+
+                    <input
+                     type="text"
+                     id="end_date"
+                     placeholder="End Date"
+                     onfocus="this.type='date'"
+                     onblur="if(!this.value)this.type='text'"
+                                                                />
+
+                    <input
+                        type="number"
+                        id="department_id"
+                        placeholder="Department ID"
+                    />
+
+                    <button type="submit" id="submitBtn">
+                        Add Project
+                    </button>
+                </form>
+            </section>
+
+            <!-- Project Table -->
+            <section class="card">
+                <h2>Project List</h2>
+
+                <div class="table-wrapper">
+                    <table id="projectTable">
+                        <thead>
+                            <tr>
+                                <th>ID</th>
+                                <th>Project Name</th>
+                                <th>Budget</th>
+                                <th>Start Date</th>
+                                <th>End Date</th>
+                                <th>Department</th>
+                                <th>Actions</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <!-- Filled by projects.js -->
+                        </tbody>
+                    </table>
+                </div>
+            </section>
+        </main>
+    </div>
+
+    <script src="js/projects.js"></script>
+</body>
+</html>

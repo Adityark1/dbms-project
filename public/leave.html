@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>HRMS - Leave Records</title>
+    <link rel="stylesheet" href="css/style.css" />
+</head>
+<body>
+    <div class="layout">
+        <aside class="sidebar">
+           <div class="sidebar-header">
+    <img
+        src="images/hrms-logo.png"
+        alt="HRMS Logo"
+        class="sidebar-logo"
+    />
+</div>
+
+            <nav class="sidebar-nav">
+                <a href="index.html" class="nav-item">
+                    <span>📊</span> Dashboard
+                </a>
+
+                <a href="employee.html" class="nav-item">
+                    <span>👥</span> Employees
+                </a>
+
+                <a href="departments.html" class="nav-item">
+                    <span>🏢</span> Departments
+                </a>
+
+                <a href="projects.html" class="nav-item">
+                    <span>📁</span> Projects
+                </a>
+
+                <a href="attendance.html" class="nav-item">
+                    <span>📅</span> Attendance
+                </a>
+
+                <a href="leave.html" class="nav-item active">
+                    <span>🌴</span> Leave Records
+                </a>
+
+                <a href="payroll.html" class="nav-item">
+                    <span>💰</span> Payroll
+                </a>
+            </nav>
+        </aside>
+
+        <main class="main-content">
+            <header class="topbar">
+                <h1>Leave Records</h1>
+                <p>Manage employee leave requests and approvals</p>
+            </header>
+
+            <!-- Search -->
+            <section class="toolbar">
+                <input
+                    type="text"
+                    id="searchInput"
+                    placeholder="Search leave records..."
+                />
+            </section>
+
+            <!-- Add Leave Record -->
+            <section class="card">
+                <h2>Add Leave Record</h2>
+
+                <form id="leaveForm">
+                    <input
+                        type="number"
+                        id="employee_id"
+                        placeholder="Employee ID"
+                        required
+                    />
+
+                    <input
+                        type="text"
+                        id="leave_type"
+                        placeholder="Leave Type (Sick, Casual, Annual)"
+                        required
+                    />
+
+                   <input
+                      type="text"
+                      id="start_date"
+                      placeholder="Start Date"
+                      onfocus="this.type='date'"
+                      onblur="if(!this.value)this.type='text'"
+                                                                 />
+                   <input
+                      type="text"
+                      id="end_date"
+                      placeholder="End Date"
+                      onfocus="this.type='date'"
+                      onblur="if(!this.value)this.type='text'"
+                                                                />
+                    <select id="status">
+                        <option value="Pending">Pending</option>
+                        <option value="Approved">Approved</option>
+                        <option value="Rejected">Rejected</option>
+                    </select>
+
+                    <button type="submit" id="submitBtn">
+                        Add Leave Record
+                    </button>
+                </form>
+            </section>
+
+            <!-- Leave Table -->
+            <section class="card">
+                <h2>Leave Records</h2>
+
+                <div class="table-wrapper">
+                    <table id="leaveTable">
+                        <thead>
+                            <tr>
+                                <th>ID</th>
+                                <th>Employee</th>
+                                <th>Leave Type</th>
+                                <th>Start Date</th>
+                                <th>End Date</th>
+                                <th>Status</th>
+                                <th>Actions</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <!-- Filled by leave.js -->
+                        </tbody>
+                    </table>
+                </div>
+            </section>
+        </main>
+    </div>
+
+    <script src="js/leave.js"></script>
+</body>
+</html>

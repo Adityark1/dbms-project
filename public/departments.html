@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>HRMS - Departments</title>
+    <link rel="stylesheet" href="css/style.css" />
+</head>
+<body>
+    <div class="layout">
+        <aside class="sidebar">
+            <div class="sidebar-header">
+    <img
+        src="images/hrms-logo.png"
+        alt="HRMS Logo"
+        class="sidebar-logo"
+    />
+</div>
+
+            <nav class="sidebar-nav">
+                <a href="index.html" class="nav-item"><span>📊</span>Dashboard</a>
+                <a href="employee.html" class="nav-item"><span>👥</span>Employees</a>
+                <a href="departments.html" class="nav-item active"><span>🏢</span>Departments</a>
+                <a href="projects.html" class="nav-item"><span>📁</span>Projects</a>
+                <a href="attendance.html" class="nav-item"><span>📅</span>Attendance</a>
+                <a href="leave.html" class="nav-item"><span>🌴</span>Leave Records</a>
+                <a href="payroll.html" class="nav-item"><span>💰</span>Payroll</a>
+            </nav>
+        </aside>
+
+        <main class="main-content">
+            <header class="topbar">
+                <h1>Departments</h1>
+                <p>Manage company departments and locations</p>
+            </header>
+
+            <section class="toolbar">
+                <input type="text" id="searchInput" placeholder="Search departments..." />
+            </section>
+
+            <section class="card">
+                <h2>Add Department</h2>
+                <form id="departmentForm">
+                    <input type="text" id="department_name" placeholder="Department Name" required />
+                    <input type="text" id="location" placeholder="Location" />
+                    <input type="number" id="manager_id" placeholder="Manager Employee ID (optional)" />
+                    <button type="submit" id="submitBtn">Add Department</button>
+                </form>
+            </section>
+
+            <section class="card">
+                <h2>Department List</h2>
+                <div class="table-wrapper">
+                    <table id="departmentTable">
+                        <thead>
+                            <tr>
+                                <th>ID</th>
+                                <th>Department Name</th>
+                                <th>Location</th>
+                                <th>Manager</th>
+                                <th>Actions</th>
+                            </tr>
+                        </thead>
+                        <tbody></tbody>
+                    </table>
+                </div>
+            </section>
+        </main>
+    </div>
+
+    <script src="js/departments.js"></script>
+</body>
+</html>

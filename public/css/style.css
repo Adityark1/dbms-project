@@ -1,0 +1,334 @@
+/* COLOR-SCHEME UPDATE ONLY
+   Same layout and styling as your original CSS,
+   but with a clean navy + blue professional palette.
+*/
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: "Segoe UI", Arial, sans-serif;
+    background: #f4f7fb;
+    color: #1f2937;
+}
+
+/* Layout */
+.layout {
+    display: flex;
+    min-height: 100vh;
+}
+
+/* Sidebar */
+.sidebar {
+    width: 260px;
+    background: linear-gradient(180deg, #0f172a 0%, #1d4ed8 100%);
+    color: white;
+    padding: 28px 20px;
+    box-shadow: 4px 0 20px rgba(15, 23, 42, 0.12);
+    position: sticky;
+    top: 0;
+    height: 100vh;
+}
+
+.sidebar-header h2 {
+    font-size: 28px;
+    font-weight: 700;
+    margin-bottom: 6px;
+}
+
+.sidebar-header p {
+    font-size: 13px;
+    color: rgba(255, 255, 255, 0.75);
+    margin-bottom: 30px;
+}
+
+.sidebar-nav {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.nav-item {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    padding: 12px 14px;
+    color: rgba(255, 255, 255, 0.85);
+    text-decoration: none;
+    border-radius: 12px;
+    transition: all 0.25s ease;
+}
+
+.nav-item:hover {
+    background: rgba(255, 255, 255, 0.12);
+    transform: translateX(4px);
+}
+
+.nav-item.active {
+    background: rgba(255, 255, 255, 0.18);
+    color: white;
+    font-weight: 600;
+}
+
+/* Main Content */
+.main-content {
+    flex: 1;
+    padding: 36px;
+}
+
+.topbar h1 {
+    font-size: 42px;
+    font-weight: 700;
+    margin-bottom: 8px;
+}
+
+.topbar p {
+    color: #6b7280;
+    margin-bottom: 30px;
+    font-size: 16px;
+}
+
+/* Toolbar */
+.toolbar {
+    margin-bottom: 24px;
+}
+
+#searchInput {
+    width: 100%;
+    max-width: 420px;
+    padding: 14px 16px;
+    border: 1px solid #dbe4f0;
+    border-radius: 12px;
+    background: white;
+    font-size: 14px;
+    box-shadow: 0 4px 12px rgba(15, 23, 42, 0.05);
+}
+
+#searchInput:focus {
+    outline: none;
+    border-color: #2563eb;
+    box-shadow: 0 0 0 4px rgba(37, 99, 235, 0.10);
+}
+
+/* Dashboard Stats Grid */
+.stats-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(230px, 1fr));
+    gap: 24px;
+    margin-top: 10px;
+}
+
+.stat-card {
+    background: white;
+    border-radius: 20px;
+    padding: 28px;
+    box-shadow: 0 10px 30px rgba(15, 23, 42, 0.08);
+    transition: all 0.25s ease;
+    animation: fadeInUp 0.45s ease;
+}
+
+.stat-card:hover {
+    transform: translateY(-6px);
+    box-shadow: 0 18px 40px rgba(15, 23, 42, 0.12);
+}
+
+.stat-card h3 {
+    font-size: 15px;
+    font-weight: 600;
+    color: #2563eb;
+    margin-bottom: 12px;
+}
+
+.stat-card p {
+    font-size: 40px;
+    font-weight: 700;
+    color: #111827;
+}
+
+/* Cards */
+.card {
+    background: white;
+    border-radius: 20px;
+    padding: 28px;
+    margin-bottom: 28px;
+    box-shadow: 0 10px 30px rgba(15, 23, 42, 0.08);
+    animation: fadeInUp 0.45s ease;
+}
+
+.card h2 {
+    font-size: 28px;
+    margin-bottom: 20px;
+    color: #111827;
+}
+
+/* Forms */
+form {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+    gap: 14px;
+}
+
+input,
+select,
+button {
+    padding: 13px 14px;
+    border-radius: 10px;
+    border: 1px solid #dbe4f0;
+    font-size: 14px;
+    outline: none;
+}
+
+input:focus,
+select:focus {
+    border-color: #2563eb;
+    box-shadow: 0 0 0 4px rgba(37, 99, 235, 0.10);
+}
+
+button {
+    border: none;
+    cursor: pointer;
+    font-weight: 600;
+    transition: all 0.2s ease;
+}
+
+/* Main Submit Button */
+#submitBtn {
+    background: linear-gradient(135deg, #2563eb, #1d4ed8);
+    color: white;
+}
+
+#submitBtn:hover {
+    transform: translateY(-1px);
+    box-shadow: 0 8px 18px rgba(37, 99, 235, 0.25);
+}
+
+/* Tables */
+.table-wrapper {
+    overflow-x: auto;
+}
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+}
+
+th,
+td {
+    padding: 14px 16px;
+    border-bottom: 1px solid #e5edf7;
+    text-align: left;
+    white-space: nowrap;
+}
+
+th {
+    background: #f8fbff;
+    font-weight: 600;
+    color: #1d4ed8;
+}
+
+tbody tr {
+    transition: background 0.2s ease;
+}
+
+tbody tr:hover {
+    background: #f4f8ff;
+}
+
+/* Action Buttons */
+.actions {
+    display: flex;
+    gap: 8px;
+}
+
+.btn-edit,
+.btn-delete {
+    padding: 8px 12px;
+    border-radius: 8px;
+    color: white;
+    font-size: 12px;
+    font-weight: 600;
+}
+
+.btn-edit {
+    background: #0ea5e9;
+}
+
+.btn-edit:hover {
+    background: #0284c7;
+}
+
+.btn-delete {
+    background: #ef4444;
+}
+
+.btn-delete:hover {
+    background: #dc2626;
+}
+
+/* Animation */
+@keyframes fadeInUp {
+    from {
+        opacity: 0;
+        transform: translateY(12px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* Responsive */
+@media (max-width: 900px) {
+    .layout {
+        flex-direction: column;
+    }
+
+    .sidebar {
+        width: 100%;
+        height: auto;
+        position: relative;
+    }
+
+    .main-content {
+        padding: 20px;
+    }
+
+    .topbar h1 {
+        font-size: 30px;
+    }
+
+    .card h2 {
+        font-size: 22px;
+    }
+
+    .stat-card p {
+        font-size: 32px;
+    }
+    /* Sidebar Logo */
+
+}
+/* Sidebar Logo Container */
+.sidebar-header {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-bottom: 40px;
+    padding: 10px 0 -1px;
+}
+
+/* Transparent Logo */
+.sidebar-logo {
+    width: 800px;
+    max-width: 150%;
+    height: auto;
+    display: block;
+
+    /* Makes transparent PNG/SVG stand out on dark sidebar */
+    filter:
+        brightness(1.35)
+        contrast(1.25)
+        drop-shadow(0 6px 18px rgba(0, 0, 0, 0.35));
+}

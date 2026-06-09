@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>HRMS - Attendance</title>
+    <link rel="stylesheet" href="css/style.css" />
+</head>
+<body>
+    <div class="layout">
+        <aside class="sidebar">
+            <div class="sidebar-header">
+    <img
+        src="images/hrms-logo.png"
+        alt="HRMS Logo"
+        class="sidebar-logo"
+    />
+</div>
+
+            <nav class="sidebar-nav">
+                <a href="index.html" class="nav-item">
+                    <span>📊</span> Dashboard
+                </a>
+                <a href="employee.html" class="nav-item">
+                    <span>👥</span> Employees
+                </a>
+                <a href="departments.html" class="nav-item">
+                    <span>🏢</span> Departments
+                </a>
+                <a href="projects.html" class="nav-item">
+                    <span>📁</span> Projects
+                </a>
+                <a href="attendance.html" class="nav-item active">
+                    <span>📅</span> Attendance
+                </a>
+                <a href="leave.html" class="nav-item">
+                    <span>🌴</span> Leave Records
+                </a>
+                <a href="payroll.html" class="nav-item">
+                    <span>💰</span> Payroll
+                </a>
+            </nav>
+        </aside>
+
+        <main class="main-content">
+            <header class="topbar">
+                <h1>Attendance</h1>
+                <p>Track employee attendance and working hours</p>
+            </header>
+
+            <section class="toolbar">
+                <input
+                    type="text"
+                    id="searchInput"
+                    placeholder="Search attendance..."
+                />
+            </section>
+
+            <section class="card">
+                <h2>Add Attendance Record</h2>
+
+                <form id="attendanceForm">
+                    <input type="number" id="employee_id" placeholder="Employee ID" required />
+                    <input type="date" id="date" />
+                   <input
+                     type="text"
+                     id="check_in_time"
+                     placeholder="Check In Time"
+                     onfocus="this.type='time'"
+                     onblur="if(!this.value)this.type='text'"
+                                                              />
+                    
+
+                    <input
+                     type="text"
+                     id="check_out_time"
+                     placeholder="Check Out Time"
+                     onfocus="this.type='time'"
+                    onblur="if(!this.value)this.type='text'"
+                                                                />
+
+                    <select id="status">
+                        <option value="Present">Present</option>
+                        <option value="Absent">Absent</option>
+                        <option value="On Leave">On Leave</option>
+                    </select>
+
+                    <button type="submit" id="submitBtn">
+                        Add Attendance
+                    </button>
+                </form>
+            </section>
+
+            <section class="card">
+                <h2>Attendance Records</h2>
+
+                <div class="table-wrapper">
+                    <table id="attendanceTable">
+                        <thead>
+                            <tr>
+                                <th>ID</th>
+                                <th>Employee</th>
+                                <th>Date</th>
+                                <th>Check In</th>
+                                <th>Check Out</th>
+                                <th>Status</th>
+                                <th>Actions</th>
+                            </tr>
+                        </thead>
+                        <tbody></tbody>
+                    </table>
+                </div>
+            </section>
+        </main>
+    </div>
+
+    <script src="js/attendance.js"></script>
+</body>
+</html>
